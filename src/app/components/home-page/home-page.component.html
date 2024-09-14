@@ -1,0 +1,15 @@
+<app-header (selectedFeature)="selectFeature($event)"></app-header>
+<div class="container mx-auto">
+
+  <div class="row" *ngIf="featureLoaded=='recipes'">
+    <div class="col-md-5">
+      <app-recipe-list (selectedRecipe)="selectedRecipe=$event"></app-recipe-list>
+
+    </div>
+    <div class="col-md-7">
+      <app-recipe-details *ngIf="selectedRecipe;else noRecipe" [recipe]="selectedRecipe"></app-recipe-details>
+      <ng-template #noRecipe>please select recipe</ng-template>
+    </div>
+  </div>
+  <app-shopping-list *ngIf="featureLoaded == 'shopping'"></app-shopping-list>
+</div>

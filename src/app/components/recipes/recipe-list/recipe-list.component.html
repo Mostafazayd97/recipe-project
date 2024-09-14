@@ -1,0 +1,20 @@
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <button class="btn btn-primary "> new Recipe</button>
+  </div>
+</div>
+<br>
+<div class="grid grid-cols-12">
+  @for (recipe of recipes; track recipe.recipeId; let i = $index) {
+    <div class="col-span-6 py-4" [class.pr-3]="i % 2 == 0">
+      <app-recipe-item [recipe]="recipe" (click)="onSelectedRecipe(recipe)" ></app-recipe-item>
+    </div>
+  }
+</div>
+
+
+<br>
+
+
+<app-recipe-item></app-recipe-item>
