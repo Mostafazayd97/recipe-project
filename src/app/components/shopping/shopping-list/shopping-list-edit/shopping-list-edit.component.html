@@ -1,1 +1,21 @@
-<p>shopping-list-edit works!</p>
+<form class="row">
+  <div class="form-group col-md-5">
+    <label for="name"> Name </label>
+    <input class="form-control" #ingredientName id="name" type="text">
+  </div>
+  <div class="form-group col-md-3">
+    <label for="amount"> amount </label>
+    <input class="form-control" #ingredientAmount id="amount" type=number>
+  </div>
+  <div class="row">
+    <br>
+
+    <div class="col-md-12">
+      <button class="btn btn-success" type="button" (click)="toAddShoppinglist(ingredientName,ingredientAmount)">Add</button>&nbsp;
+      <button class="btn btn-danger" type="submit">Delete</button>&nbsp;
+      <button class="btn btn-primary" type="submit">clear</button>&nbsp;
+    </div>
+
+
+  </div>
+</form>

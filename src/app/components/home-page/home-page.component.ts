@@ -22,7 +22,6 @@ import {RecipeModel} from "../recipes/recipe-model";
 export class HomePageComponent {
 
   featureLoaded:string = 'recipes'
-  selectedRecipe?:RecipeModel
 
   selectFeature(feature:string){
     this.featureLoaded = feature

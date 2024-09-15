@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {RecipeModel} from "../recipe-model";
+import {RecipeService} from "../../../services/recipe.service";
 
 @Component({
   selector: 'app-recipe-details',
@@ -9,6 +10,17 @@ import {RecipeModel} from "../recipe-model";
   styleUrl: './recipe-details.component.css'
 })
 export class RecipeDetailsComponent {
-  @Input() recipe!: RecipeModel;
+  recipe!: RecipeModel;
+  constructor(private recipeService: RecipeService) {
+
+  }
+
+  ngOnInit(): void {
+    this.recipeService.selectedRecipe.subscribe(recipe => {
+      this.recipe = recipe
+    })
+  }
+
+
 
 }

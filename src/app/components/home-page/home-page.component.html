@@ -3,11 +3,11 @@
 
   <div class="row" *ngIf="featureLoaded=='recipes'">
     <div class="col-md-5">
-      <app-recipe-list (selectedRecipe)="selectedRecipe=$event"></app-recipe-list>
+      <app-recipe-list></app-recipe-list>
 
     </div>
     <div class="col-md-7">
-      <app-recipe-details *ngIf="selectedRecipe;else noRecipe" [recipe]="selectedRecipe"></app-recipe-details>
+      <app-recipe-details ></app-recipe-details>
       <ng-template #noRecipe>please select recipe</ng-template>
     </div>
   </div>

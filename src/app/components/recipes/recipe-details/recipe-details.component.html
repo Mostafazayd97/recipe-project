@@ -1,3 +1,5 @@
+<br>
+<br>
 <div class="row">
   <div class="col-md-12">
     <img [src]="recipe?.imagePath" class="img-fluid">
@@ -29,17 +31,26 @@
 
 <div class="row">
   <div class="col-md-12">
-    <h1>{{recipe?.recipeType}}</h1>
+    <h1>{{ recipe?.recipeType }}</h1>
   </div>
 </div>
-
 
 
 <div class="row">
   <div class="col-md-12">
-    <h1>{{recipe?.recipeDescription}}</h1>
+    <h1>{{ recipe?.recipeDescription }}</h1>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-12">
+    @for (recipe of recipe?.ingredients; track $index) {
+      <span>{{ recipe?.name }}</span>&nbsp;
+      <span>{{ recipe?.amount }}</span>
+    }
+  </div>
+</div>
+
 
 
 
